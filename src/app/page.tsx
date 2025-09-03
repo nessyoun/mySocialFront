@@ -1,18 +1,24 @@
-// File: app/page.tsx
 "use client";
 
-
-import React from "react";
-import UsersComponent from "./users/page";
-import SideMenu from "./shared/nav-menu/SideMenu";
-import { ActiveMenu } from "./shared/nav-menu/activeMenu";
-
-
-
-
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { AuthService } from '@/lib/auth';
 
 export default function Page() {
-return (
-  <SideMenu activeMenu={ActiveMenu.Acceuil}></SideMenu>
-);
+  const router = useRouter();
+
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
+  }, [router]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  );
 }

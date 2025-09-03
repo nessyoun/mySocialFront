@@ -7,8 +7,8 @@ import 'primeflex/primeflex.css';
 import Providers from './providers';
 
 export const metadata: Metadata = {
-  title: 'My Social App',
-  description: 'This is an application that handles all activites of social entity',
+  title: 'Backoffice Social - OCP Group',
+  description: 'Plateforme de gestion des activités sociales',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
