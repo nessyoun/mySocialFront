@@ -1,0 +1,11 @@
+/* BarTool.css */
+
+.bar-tool {
+    display: flex;
+    margin: 0;
+}
+
+.logout-button{
+    height: 30px;
+    
+}
